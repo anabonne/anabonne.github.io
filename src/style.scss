@@ -1,0 +1,108 @@
+// Variables
+$mobile-breakpoint: 768px;
+$sidebar-width: 250px;
+$drawer-transition: margin-left .5s;
+$font-family-default: Arial, sans-serif;
+$color-background: #111;
+$color-link: white;
+$color-link-hover: #f1f1f1;
+$color-footer-background: #f1f1f1;
+
+// Body and HTML defaults
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: $font-family-default;
+}
+
+// Side drawer styles
+.side-drawer {
+  height: 100%;
+  width: 0; // Initial state is hidden
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: $color-background;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+
+  a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 22px;
+    color: $color-link;
+    display: block;
+    transition: 0.3s;
+
+    &:hover {
+      color: $color-link-hover;
+    }
+  }
+
+  .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+}
+
+// Media queries for responsive adjustments
+@media screen and (min-width: $mobile-breakpoint) {
+  .side-drawer {
+    width: $sidebar-width;
+  }
+
+  .side-drawer, #main {
+    transition: $drawer-transition;
+  }
+
+  #main {
+    margin-left: $sidebar-width;
+  }
+}
+
+// Content and footer styling
+.content {
+  padding: 20px;
+}
+
+header, span {
+
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: $color-footer-background;
+}
+
+// PDF container for responsive embed
+.pdf-container {
+  position: relative;
+  overflow: hidden;
+  padding-top: 56.25%; // Default aspect ratio (16:9)
+  height: 0;
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+}
+
+// Adjusting PDF container for smaller screens
+@media (max-width: $mobile-breakpoint) {
+  .pdf-container {
+    padding-top: 75%; // Adjusting aspect ratio for smaller screens
+  }
+}

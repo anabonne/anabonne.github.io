@@ -1,0 +1,11 @@
+npm install --save-dev webpack webpack-cli sass-loader css-loader style-loader sass
+npm install --save-dev webpack webpack-cli webpack-merge sass-loader css-loader style-loader sass
+
+npm install --save-dev webpack-dev-server
+
+npm install --save-dev html-webpack-plugin // process and copies html templates into dist/
+
+npm install --save-dev copy-webpack-plugin // copies and bundles assets into dits/
+
+npm run build
+npm run start
