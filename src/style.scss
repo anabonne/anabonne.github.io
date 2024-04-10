@@ -4,8 +4,9 @@ $sidebar-width: 250px;
 $drawer-transition: margin-left .5s;
 $font-family-default: Arial, sans-serif;
 $color-background: #111;
-$color-link: white;
-$color-link-hover: #f1f1f1;
+$color-link: black;
+$color-link-side-drawer: white;
+$color-link-hover: #3b79ba;
 $color-footer-background: #f1f1f1;
 
 // Body and HTML defaults
@@ -13,6 +14,31 @@ body, html {
   margin: 0;
   padding: 0;
   font-family: $font-family-default;
+}
+
+.header-container {
+  display: flex; // Enables Flexbox
+  align-items: center; // Vertically centers the flex items
+  justify-content: flex-start; // Aligns items to the start of the container
+  padding: 0 20px; // Adds some padding around the content
+
+  header {
+    margin-left: 20px; // Adds some space between the button and the header text
+  }
+
+  button:hover {
+      background-color: $color-link-hover;
+      color: $color-link-hover;
+  }
+}
+
+#noFrillsButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  svg {
+    fill: currentColor;
+  }
 }
 
 // Side drawer styles
@@ -32,12 +58,28 @@ body, html {
     padding: 10px 15px;
     text-decoration: none;
     font-size: 22px;
-    color: $color-link;
+    color: $color-link-side-drawer;
     display: block;
     transition: 0.3s;
 
     &:hover {
       color: $color-link-hover;
+    }
+
+    figure {
+      margin: 0; // Removes default margin from figure
+      display: flex;
+      align-items: center;
+
+      img, svg {
+        height: 24px;
+        width: auto;
+        margin-right: 8px; // Space between logo and text
+      }
+
+      figcaption {
+        margin: 0; // Adjust as needed
+      }
     }
   }
 
@@ -99,6 +141,7 @@ footer {
 // Adjusting PDF container for smaller screens
 @media (max-width: $mobile-breakpoint) {
   .pdf-container {
+    
     padding-top: 75%; // Adjusting aspect ratio for smaller screens
   }
 }

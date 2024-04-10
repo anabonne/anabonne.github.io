@@ -9,16 +9,50 @@
 <body>
     <nav id="drawerMenu" class="side-drawer">
         <a href="#" class="closebtn" onclick="toggleDrawer()">&times;</a>
-        <a href="#">About</a>
-        <a href="#">Portfolio</a>
+        <a href="#">Home</a>
+        <a href="https://github.com/anabonne" target="_blank">
+            <figure>
+                <img src="assets/github-mark-white.svg">
+                <figcaption>My GitHub</figcaption>
+            </figure>
+        </a>
+        <a href="https://www.linkedin.com/in/adriennabonne/">
+            <figure>
+                <img src="assets/li-icon.svg">
+                <figcaption>My LinkedIn</figcaption>
+            </figure>
+        </a>
     </nav>
 
     <div id="main">
-        <header>
-            <h1><span style="cursor:pointer" onclick="toggleDrawer()">&#9776;</span> Adrien Nabonne | Software Engineer</h1>
-        </header>
+        <div class="header-container">
+            <button aria-expanded="false" aria-label="Menu button" id="noFrillsButton" onclick="toggleDrawer()">
+                <svg viewBox="0 0 100 80" width="40" height="40">
+                    <rect width="100" height="20"></rect>
+                    <rect y="30" width="100" height="20"></rect>
+                    <rect y="60" width="100" height="20"></rect>
+                </svg>
+            </button>
+            <header>
+                <h1>
+                <!--
+                <a href="javascript:void(0);" onclick="toggleDrawer()">
+                    <figure>
+                        <svg viewBox="0 0 100 70" width="100" height="70">
+                            <rect y=0 width="100" height="10"></rect>
+                            <rect y="30" width="100" height="10"></rect>
+                            <rect y="60" width="100" height="10"></rect>
+                        </svg>
+                        <figcaption>Menu</figcaption>
+                    </figure>
+                </a>Adrien Nabonne | Software Engineer
+                -->
+                    Adrien Nabonne | Software Engineer
+                </h1>
+            </header>
+        </div>
         <section class="content">
-            <p>Welcome to my landing page</p>
+            <p>Welcome to my landing page! This site is under construction. In the meantime you can take a look at my resume below.</p>
             <div class="pdf-container">
               <iframe src="assets/Resume-march-2024_extended.pdf" frameborder="0">
               This browser does not support PDFs. Please download the PDF to view it: <a href="assets/Resume-march-2024_extended.pdf">Download PDF</a>.
