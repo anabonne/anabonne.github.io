@@ -16,11 +16,32 @@ body, html {
   font-family: $font-family-default;
 }
 
+#main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; // Make sure it fills the viewport height
+
+  .content {
+    flex: 1; // This allows the content to grow and fill available space
+    display: flex;
+    flex-direction: column;
+  }
+
+  .pdf-container {
+    flex: 1; // Grow to fill available space within its parent (.content)
+    iframe {
+      width: 100%;
+      height: 100%; // Make iframe fill its container's height
+    }
+  }
+}
+
 .header-container {
   display: flex; // Enables Flexbox
   align-items: center; // Vertically centers the flex items
   justify-content: flex-start; // Aligns items to the start of the container
   padding: 0 20px; // Adds some padding around the content
+  background-color: $color-footer-background;
 
   header {
     margin-left: 20px; // Adds some space between the button and the header text
@@ -119,29 +140,4 @@ footer {
   bottom: 0;
   width: 100%;
   background-color: $color-footer-background;
-}
-
-// PDF container for responsive embed
-.pdf-container {
-  position: relative;
-  overflow: hidden;
-  padding-top: 56.25%; // Default aspect ratio (16:9)
-  height: 0;
-
-  iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-  }
-}
-
-// Adjusting PDF container for smaller screens
-@media (max-width: $mobile-breakpoint) {
-  .pdf-container {
-    
-    padding-top: 75%; // Adjusting aspect ratio for smaller screens
-  }
 }
